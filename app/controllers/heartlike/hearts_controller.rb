@@ -2,35 +2,32 @@ require_dependency "heartlike/application_controller"
 
 module Heartlike
   class HeartsController < ApplicationController
-    before_action :set_heart, only: :destroy
+    before_action :find_heartable
 
-    # POST /hearts
-    def create
-      @heart = Heart.new(heart_params)
-
-      if @heart.save
-        redirect_to @heart, notice: 'Heart was successfully created.'
+    def heart
+      if user_signed_in?
+        @heart = @article.heart!(current_user.id)
       else
-        render :new
+        @heart = @article.heart!
+        cookies.permanent.encrypted["heart_token_#{@article.id}"] = @heart.heart_token
       end
+      respond_to :html, :js
     end
 
-    # DELETE /hearts/1
-    def destroy
-      @heart.destroy
-      redirect_to hearts_url, notice: 'Heart was successfully destroyed.'
+    def unheart
+      if user_signed_in?
+        @article.unheart!(current_user.id)
+      else
+        @article.unheart!(false, params[:heart_token])
+        cookies.delete "heart_token_#{@article.id}"
+      end
+      respond_to :html, :js
     end
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_heart
-      @heart = Heart.find(params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def heart_params
-      params.fetch(:heart, {})
+    def find_heartable
+      @heartable = Article.find(params[:article_id])
     end
   end
 end

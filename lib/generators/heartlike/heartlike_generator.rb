@@ -13,6 +13,7 @@ module Heartlike
       desc "Generates a model with the given NAME (if one does not exist) with heartlike " \
            "configuration plus a migration file and devise routes."
 
+      hook_for :orm
       class_option :routes, desc: "Generate routes", type: :boolean, default: true
 
       def add_heartlike_routes

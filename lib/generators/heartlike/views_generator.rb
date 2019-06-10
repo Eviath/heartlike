@@ -64,12 +64,7 @@ module Heartlike
       end
     end
 
-    class FormForGenerator < Rails::Generators::Base #:nodoc:
-      include ViewPathTemplates
-      source_root File.expand_path("../../../../app/views/heartlike", __FILE__)
-      desc "Copies default Heartlike views to your application."
-      hide!
-    end
+
 
     class ViewsGenerator < Rails::Generators::Base
       desc "Copies heartlike views to your application."
@@ -79,9 +74,6 @@ module Heartlike
 
       invoke HeartsViewsGenerator
 
-      hook_for :form_builder, aliases: "-b",
-               desc: "Form builder to be used",
-               default: "form_for"
 
     end
   end

@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
 require 'rails/generators/active_record'
+require 'generators/heartlike/orm_helpers'
 
 module ActiveRecord
   module Generators
     class HeartlikeGenerator < ActiveRecord::Generators::Base
       argument :attributes, type: :array, default: [], banner: "field:type field:type"
 
+      class_option :parent_model, type: :string, desc: 'Model name of which Heartlike model will belong to'
       class_option :primary_key_type, type: :string, desc: "The type for primary key"
 
-
+      include Heartlike::Generators::OrmHelpers
       source_root File.expand_path("../templates", __FILE__)
 
       def copy_heartlike_migration
@@ -21,11 +23,11 @@ module ActiveRecord
       end
 
       def generate_model
-        invoke "active_record:model", [name], migration: false unless model_exists? && behavior == :invoke
+          invoke "active_record:model", [name], migration: false unless model_exists? && behavior == :invoke
       end
 
-      def inject_heartlikee_content
-        content = model_contents
+      def inject_heartlike_content
+        content = model_contents(options[:parent_model])
 
         class_path = if namespaced?
                        class_name.to_s.split("::")
