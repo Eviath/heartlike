@@ -1,0 +1,7 @@
+$('#heart__button').html("<%= j render partial: 'heartlike/hearts/partials/heart_button', locals: { article: @article } %>")
+$('#heart__count').html("<%= j render partial: 'heartlike/hearts/partials/heart_count', locals: { article: @article } %>")
+$("#heart__paragraph").fadeOut(100, function() {
+    $(this).html("<%= j render partial: 'heartlike/hearts/partials/paragraphs/happy' %>").fadeIn(300);
+});
+
+

@@ -18,7 +18,8 @@ module ActiveRecord
         # if (behavior == :invoke && model_exists?) || (behavior == :revoke && migration_exists?(table_name))
         #   migration_template "migration_existing.rb", "#{migration_path}/add_heartlike_to_#{table_name}.rb", migration_version: migration_version
         # else
-          migration_template "migration.rb", "#{migration_path}/heartlike_create_#{table_name}.rb", migration_version: migration_version
+        #   migration_template "migration.rb", "#{migration_path}/heartlike_create_#{table_name}.rb", migration_version: migration_version
+          migration_template "article_migration.rb", "#{migration_path}/heartlike_create_articles.rb", migration_version: migration_version
         # end
       end
 
