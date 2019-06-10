@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Heartlike::VERSION
   spec.authors     = ["Jacek Kowalski"]
   spec.email       = ["eviathos@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Heartlike."
-  spec.description = "TODO: Description of Heartlike."
+  spec.homepage    = "https://github.com/Eviath/heartlike"
+  spec.summary     = "Heartlike Ruby on Rails Engine"
+  spec.description = "Heartlike adds 'hearts' or 'likes' system to any ruby on rails application. You can add likes to anything in your application!"
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
