@@ -1,0 +1,10 @@
+pl:
+  heartlike:
+    heart:
+      button:
+        yes: 'Tak'
+        no: 'Nie'
+      paragraph:
+        happy: 'Super, że Ci się podoba!'
+        sad: 'Oh! Przykro nam!'
+        question: 'Czy ten artykuł był pomocny?'

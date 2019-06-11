@@ -1,0 +1,9 @@
+<div id="heart__paragraph">
+  <% if guest_or_user_hearted?(article) %>
+    <%= render partial: 'heartlike/hearts/partials/paragraphs/happy' %>
+  <% else %>
+    <%= render partial: 'heartlike/hearts/partials/paragraphs/question' %>
+  <% end %>
+</div>
+
+

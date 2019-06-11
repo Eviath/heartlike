@@ -1,0 +1,10 @@
+en:
+  heartlike:
+    heart:
+      button:
+        yes: 'Yes'
+        no: 'No'
+      paragraph:
+        happy: 'Great news!'
+        sad: 'Oh, we are sorry!'
+        question: 'Was the article helpful?'
