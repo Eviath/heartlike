@@ -1,10 +1,15 @@
 module Heartlike
   class Article < ApplicationRecord
+    # Associations
     belongs_to :user
     has_many :hearts
 
-    # Article methods
+    # Validations
+    validates :title, presence: true, length: { minimum: 3 }
+    validates :body, presence: true, length: { minimum: 3 }
+    validates :user, presence: true
 
+    # Article methods
     # Show article title in url
     def to_param
       "#{id}-#{title.parameterize}"

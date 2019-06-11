@@ -11,7 +11,12 @@ module Heartlike
         heart = @article.heart!
         cookies.permanent.encrypted["heart_token_#{@article.id}"] = heart.heart_token
       end
-      respond_to :html, :js
+      respond_to do |format|
+        format.html do
+          redirect_to @article
+        end
+        format.js
+      end
     end
 
     def unheart
@@ -21,7 +26,12 @@ module Heartlike
         @article.unheart!(false, params[:heart_token])
         cookies.delete "heart_token_#{@article.id}"
       end
-      respond_to :html, :js
+      respond_to do |format|
+        format.html do
+          redirect_to @article
+        end
+        format.js
+      end
     end
 
     private
