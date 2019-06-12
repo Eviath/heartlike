@@ -1,0 +1,11 @@
+
+@mixin flex-mix($direction, $justify-position, $align-position) {
+  // Flex styles - position contents
+  display: flex;
+  // position elements as columns one under another
+  flex-direction: $direction;
+  // justify content horizontally by given position
+  justify-content: $justify-position;
+  // align items vertically by given position
+  align-items: $align-position;
+}

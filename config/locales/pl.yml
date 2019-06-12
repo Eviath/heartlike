@@ -1,6 +1,8 @@
 pl:
   heartlike:
-    heart:
+    actions:
+      confirm: 'Jesteś pewny/a?'
+    hearts:
       button:
         yes: 'Tak'
         no: 'Nie'
@@ -8,3 +10,14 @@ pl:
         happy: 'Super, że Ci się podoba!'
         sad: 'Oh! Przykro nam!'
         question: 'Czy ten artykuł był pomocny?'
+    articles:
+      index:
+        title: 'Artykuły'
+      article:
+        hearts_count: 'Liczba polubień: '
+        created_by: 'Opublikowane przez:'
+        created_at: 'Opublikowano:'
+        buttons:
+          show: 'Zobacz'
+          edit: 'Edytuj'
+          destroy: 'Usuń'

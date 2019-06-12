@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(email: 'example@example.com', password: 'foobar')
-Heartlike::Article.create!(title: 'article title', body: 'article body', user_id: User.last.id)
+15.times { Heartlike::Article.create!(title: Faker::Lorem.sentence(3, false, 4), body: Faker::Lorem.paragraph(2), user_id: User.last.id) }

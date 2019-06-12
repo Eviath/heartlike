@@ -1,6 +1,14 @@
 # Heartlike
 Short description and motivation.
 
+Engine is using your application stylesheets and layout file by default, to use heartlike stylesheet, require it in your assetpipeline like this:
+
+    *= require 'heartlike/application'
+
+or in scss
+
+    @import 'heartlike/application'
+ 
 ## Usage
 How to use my plugin.
 

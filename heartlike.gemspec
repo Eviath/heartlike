@@ -28,5 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 6.0.0.rc1"
   spec.add_dependency 'devise'
   spec.add_development_dependency "sqlite3"
+  spec.add_dependency 'sass-rails', ['>= 4.0', '< 7']
+  spec.add_dependency 'jquery-rails', ['>= 3.0', '< 5']
   spec.add_development_dependency "pry"
 end
