@@ -6,7 +6,7 @@ module Heartlike
 
     # GET /articles
     def index
-      @articles = Article.includes(:user).all
+      @articles = Article.includes(:user).all.order(created_at: :DESC)
     end
 
     # GET /articles/1
@@ -16,6 +16,10 @@ module Heartlike
     # GET /articles/new
     def new
       @article = Article.new
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     # GET /articles/1/edit
@@ -25,9 +29,13 @@ module Heartlike
     # POST /articles
     def create
       @article = Article.new(article_params)
-
       if @article.save
-        redirect_to @article, notice: 'Article was successfully created.'
+        respond_to do |format|
+          format.html do
+            redirect_to @article, notice: 'Article was successfully created.'
+          end
+          format.js
+        end
       else
         render :new
       end

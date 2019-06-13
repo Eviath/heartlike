@@ -27,9 +27,9 @@
     /* Article content 'column' */
     &__content {
       @include flex-mix(column, initial, initial);
-      border: 1px solid #efefef;
+      border: 1px solid $creamy;
       position: relative;
-      background: #fff;
+      background: $white;
       border-radius: 5px;
       margin: 1%;
       width: 96%;
@@ -39,8 +39,7 @@
       &:hover {
         transition: .3s;
         z-index: 99;
-        background: #f8f8f8;
-
+        background: $background-color;
       }
 
       /* Meta row of article, kind of footbar of every column with information */
@@ -69,7 +68,7 @@
           // When user likes article, shows for him colored heart
           &.article__hearted {
             background: $heart-color;
-            color: #fff;
+            color: $white;
           }
         }
 

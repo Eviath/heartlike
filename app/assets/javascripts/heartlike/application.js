@@ -4,18 +4,18 @@
 //= require bootstrap
 //= require_tree .
 
-if($('.article .article__meta_buttons').length) {
-    $('.article').mousedown(function () {
+if ($('.article .article__meta_buttons').length) {
+
+    $(document).on("mousedown", ".article", function () {
         var x = document.getElementById(this.id);
-        $( '.article__meta_buttons', x ).addClass( "active")
+        $('.article__meta_buttons', x).addClass("active")
     });
 
-    $('.article').mouseleave(function () {
+    $(document).on("mouseleave", ".article", function () {
         var x = document.getElementById(this.id);
-        $( '.article__meta_buttons', x ).removeClass("active")
+        $('.article__meta_buttons', x).removeClass("active")
     });
 }
-
 
 
 $('#aside__toggle').click(function () {

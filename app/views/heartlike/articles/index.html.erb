@@ -2,10 +2,6 @@
 
 <div id="articles__index_page">
 
-<div class="heartlike__buttons">
-  <%= link_to 'New Article', new_article_path, class: 'heartlike__button' %>
-</div>
-
 <ul class="articles__index">
   <%= render partial: 'heartlike/articles/partials/article', collection: @articles %>
 </ul>

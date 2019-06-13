@@ -1,5 +1,14 @@
 # Heartlike
-Short description and motivation.
+Heartlike RoR Blog Engine.
+
+### Heartlike can be so awesome thanks to these things.
+  - Ruby on Rails
+  - Devise
+  - Bootstrap
+  - Font Awesome
+  - Sass
+  - JQuery
+
 
 ## Layout
 Engine is using your application stylesheets and layout file by default, to include heartlike stylesheet and layout, require it in your assetpipeline like this:

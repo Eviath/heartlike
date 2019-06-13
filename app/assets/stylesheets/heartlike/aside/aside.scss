@@ -2,7 +2,7 @@
 
   .heartlike__aside {
     width: 10%;
-    background:#f5f5f5;
+    background:$white-light;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -27,6 +27,23 @@
       }
     }
 
+    .aside__new-article {
+      position: absolute;
+      top: 30px;
+      left: 15px;
+      &_button {
+        background: $white;
+        color: $half-dark;
+        border-radius: 50%;
+        padding: 14px 19px;
+        border: 1px solid $creamy;
+        box-shadow: 5px 10px 20px -20px #2b2b2b;
+        &:hover{
+          color: $heart-color;
+        }
+      }
+    }
+
   }
 
   .aside {
@@ -36,24 +53,6 @@
     &__body  {
       height: 80vh;
       @include flex-mix(column, center, center);
-    }
-    &__header {
-      text-align: center;
-
-      .aside__title {
-        font-size: 2em;
-        margin: 0;
-        padding: 0;
-      }
-
-      .aside__description {
-        margin: 0;
-        font-size: .8em;
-        color: $shadow;
-        font-weight: 500;
-        line-height: 1.2;
-        letter-spacing: .2em;
-      }
     }
 
     &__nav {

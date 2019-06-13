@@ -1,5 +1,10 @@
 en:
   heartlike:
+    devise:
+      sessions:
+        login: 'Log in'
+        actions:
+          login: 'Log in'
     actions:
       confirm: 'Are you sure?'
     hearts:

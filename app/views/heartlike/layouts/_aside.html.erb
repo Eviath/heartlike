@@ -1,9 +1,12 @@
 <div class="aside__body">
   <div class="aside__toggleable">
-    <div class="aside__header">
-      <h2 class="aside__title">HeartLike</h2>
-      <p class="aside__description">CREATED WITH <%=icon('fas', 'heart', class: 'strong') %></p>
+    <div class="aside__new-article">
+      <%= link_to new_article_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'aside__new-article_button'} do  %>
+        <%=icon('fas', 'plus', class: 'strong') %>
+      <% end %>
     </div>
+
+    <%= render partial: 'heartlike/partials/heartlike_brand' %>
 
     <ul class="aside__nav">
       <li class="aside__nav_item"><%=link_to 'Home', heartlike.root_path %></li>

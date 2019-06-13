@@ -1,5 +1,8 @@
 pl:
   heartlike:
+    devise:
+      sessions:
+        login: 'Logowanie'
     actions:
       confirm: 'Jesteś pewny/a?'
     hearts:
