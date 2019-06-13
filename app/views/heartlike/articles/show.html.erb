@@ -1,26 +1,28 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @article.title ) %>
 
-<div class="article">
+<div class="show_article">
+  <div class="show_article__content">
+    <p>
+      <%= @article.body %>
+    </p>
+    <div class="article__meta">
+      <p>
+        <strong>Created by:</strong>
+        <%= @article.user_id %>
+      </p>
+
+      <p>
+        <strong>Published at:</strong>
+        <i><%= l(@article.created_at, format: :long) %></i>
+      </p>
+    </div>
+    <%= render_hearts(@article)%>
+  </div>
 
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @article.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @article.user_id %>
-</p>
-
-<%= render_hearts(@article)%>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<div class="heartlike__buttons">
+  <%= link_to 'Edit', edit_article_path(@article), class:'heartlike__button' %>
+  <%= link_to 'Back', articles_path, class:'heartlike__button' %>
+</div>
 
 </div>

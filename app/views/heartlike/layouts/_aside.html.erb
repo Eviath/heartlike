@@ -1,0 +1,34 @@
+<div class="aside__body">
+  <div class="aside__toggleable">
+    <div class="aside__header">
+      <h2 class="aside__title">HeartLike</h2>
+      <p class="aside__description">CREATED WITH <%=icon('fas', 'heart', class: 'strong') %></p>
+    </div>
+
+    <ul class="aside__nav">
+      <li class="aside__nav_item"><%=link_to 'Home', heartlike.root_path %></li>
+      <% %w(pages contact help categories about).each do |link| %>
+        <li class="aside__nav_item"><a href="#"><%=link %></a></li>
+      <% end %>
+    </ul>
+
+    <div class="aside__footer">
+      <div class="aside__footer_user--info">
+        <% if user_signed_in? %>
+          <i><%= current_user.email %></i>
+        <% else %>
+          <i><%= link_to 'Log in', new_user_session_path %></i>
+        <% end %>
+      </div>
+
+      <div class="aside__footer_user--actions"></div>
+      <% if user_signed_in? %>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="aside__toggle" id="aside__toggle">
+    <%=icon('fas', 'ellipsis-v', class: 'strong') %>
+  </div>
+</div>

@@ -8,11 +8,12 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '42f2a79ee724e4f38761237defb52d1b2a66e4f90d2f9b14cdcdbf350663294f870a58dfde22764d7176bcc7f0a3e7b6cfd45b91511c092a9bbe74cc40586eb4'
+  # config.secret_key = '0c723e85925279f2f67287234edcc30bd6b3bbe203e4246173471faf56663f1bb6a08876f6295c1d8d07bb29dfa25ea251519d772274f6477345b651078a08aa'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
+  config.parent_controller = 'Heartlike::ApplicationController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -114,7 +115,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '8a49f74ac68114f966aba8c27d11b175791b7dfac7c84277c8ef4ea214a0b0551ac00cb8e9f1265e970296e9344641e697a828bced46e376a3b525f0640b5269'
+  # config.pepper = '266de33fd03eea2be2b8cb6a705012f69a6df7a52abcb4f28dbebcb4ad94e3aa0fb03f2b6d164f831fb8d46f48b5b9f3a894df2b9f4a2f91d087ce4a8cbad94e'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -278,7 +279,7 @@ Devise.setup do |config|
   #     mount MyEngine, at: '/my_engine'
   #
   # The router that invoked `devise_for`, in the example above, would be:
-  # config.router_name = :my_engine
+  config.router_name = :heartlike
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:

@@ -11,7 +11,25 @@
  * It is generally better to create a new file per style scope.
  *
  */
+@import "bootstrap";
+// Font awesome icons
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Heartlike variables
 @import "variables";
+
+// Heartlike mixins
 @import "mixins";
+
+// Heartlike global styles
 @import "global";
+
+// Heartlike Articles controller styles
 @import "articles/heartlike_articles";
+
+// Heartlike aside menu styles
+@import "aside/aside";
+
+// Heartlike hearts styles
+@import "hearts";

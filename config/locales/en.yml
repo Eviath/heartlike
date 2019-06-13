@@ -8,13 +8,12 @@ en:
         no: 'No'
       paragraph:
         happy: 'Great news!'
-        sad: 'Oh, we are sorry!'
+        sad: 'Oh, we are sorry! '
         question: 'Was the article helpful?'
     articles:
       index:
         title: 'Articles'
       article:
-        hearts_count: 'Hearts count:'
         created_by: 'Created by:'
         created_at: 'Published at:'
         buttons:

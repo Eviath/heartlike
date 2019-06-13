@@ -1,13 +1,18 @@
 # Heartlike
 Short description and motivation.
 
-Engine is using your application stylesheets and layout file by default, to use heartlike stylesheet, require it in your assetpipeline like this:
+## Layout
+Engine is using your application stylesheets and layout file by default, to include heartlike stylesheet and layout, require it in your assetpipeline like this:
 
     *= require 'heartlike/application'
 
 or in scss
 
     @import 'heartlike/application'
+    
+in layouts/application body
+
+    <%= include_heartlike_template %>
  
 ## Usage
 How to use my plugin.
@@ -28,6 +33,14 @@ Or install it yourself as:
 ```bash
 $ gem install heartlike
 ```
+
+Generate migrations:
+
+    rails heartlike:install:migrations
+    
+Run migrations
+
+    rails db:migrate
 
 ## Contributing
 Contribution directions go here.

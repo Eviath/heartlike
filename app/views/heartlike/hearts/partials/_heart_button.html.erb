@@ -1,7 +1,7 @@
-<div id="heart__button">
+<div class="article__hearts_button" id="heart__button">
   <% if guest_or_user_hearted?(article) %>
-    <%= link_to t('heartlike.hearts.button.no'), heartlike.unheart_article_heart_path(article, heart_token: heart_token_cookie(article)), class:'btn btn-dark dark-eviathos mr-2', method: :delete, remote: true %>
+    <%= link_to t('heartlike.hearts.button.no'), heartlike.unheart_article_heart_path(article, heart_token: heart_token_cookie(article)), class:'heartlike__button', method: :delete, remote: true %>
   <% else %>
-    <%= link_to t('heartlike.hearts.button.yes'), heartlike.heart_article_heart_path(article), class:'btn btn-dark dark-eviathos mr-2', method: :post, remote: true %>
+    <%= link_to t('heartlike.hearts.button.yes'), heartlike.heart_article_heart_path(article), class:'heartlike__button', method: :post, remote: true %>
   <% end %>
 </div>

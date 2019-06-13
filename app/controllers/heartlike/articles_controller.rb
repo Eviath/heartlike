@@ -6,7 +6,7 @@ module Heartlike
 
     # GET /articles
     def index
-      @articles = Article.all
+      @articles = Article.includes(:user).all
     end
 
     # GET /articles/1
@@ -49,14 +49,15 @@ module Heartlike
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_article
-        @article = Article.find(params[:id])
-      end
 
-      # Only allow a trusted parameter "white list" through.
-      def article_params
-        params.require(:article).permit(:title, :body, :user_id)
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_article
+      @article = Article.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def article_params
+      params.require(:article).permit(:title, :body, :user_id)
+    end
   end
 end

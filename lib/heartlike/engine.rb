@@ -1,6 +1,6 @@
-
-
-
+require 'devise'
+require 'font-awesome-sass'
+require 'bootstrap'
 module Heartlike
   class Engine < ::Rails::Engine
     isolate_namespace Heartlike

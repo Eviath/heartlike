@@ -1,84 +1,126 @@
 // ========== heartlike/articles/_article ==========
 // Single article object
-.article {
-  @include flex-mix(column, center, center);
+//
+//@include media-breakpoint-up(xs) { ... }
+//@include media-breakpoint-up(sm) { ... }
+//@include media-breakpoint-up(md) { ... }
+//@include media-breakpoint-up(lg) { ... }
+//@include media-breakpoint-up(xl) { ... }
+//
 
-  // half of width of parent element, two columns in a row
-  width: 45%;
+@include media-breakpoint-up(xs) {
+  .article {
+    @include flex-mix(column, center, center);
 
-  // Article title
-  &__title {
-    letter-spacing: .8px;
-  }
+    // Article title
+    &__title {
+      padding: 10px 0;
 
+      a {
+        color: $dark;
+      }
 
-  &__counters {
-    background: rgba(255, 255, 255, 0.29);
-    width: fit-content;
-    padding: 5px;
-    border-radius: 5px;
-
-    &.article__hearted {
-      background: $heart-color;
-      color: #fff;
+      letter-spacing: .8px;
     }
-  }
 
-  /* Article content 'column' */
-  &__content {
-    @include flex-mix(column, initial, initial);
-
-    box-shadow: 0px 0px 15px -10px;
-    background: #fff;
-    border-radius: 5px;
-    margin: 1%;
-    width: 96%;
-    padding: 30px;
-    transition: .3s;
-    transform: skewY(-19deg) skewX(22deg) rotateZ(22deg);
-
-    &:hover {
-      transition: .3s;
-      box-shadow: 0 0 45px -20px;
-      z-index: 99;
+    /* Article content 'column' */
+    &__content {
+      @include flex-mix(column, initial, initial);
+      border: 1px solid #efefef;
+      position: relative;
       background: #fff;
-      transform: skewY(-2deg) skewX(-2deg) rotateZ(2deg);
+      border-radius: 5px;
+      margin: 1%;
+      width: 96%;
+      padding: 30px;
+      transition: .3s;
 
-    }
-
-    /* Meta row of article, kind of footbar of every column with information */
-    .article__meta {
-      color: #636b6f;
-
-      @include flex-mix(row, space-between, initial);
-
-      &_date {
-        font-style: italic;
-      }
-
-      &_button {
-        font-size: .75em;
-        letter-spacing: .5px;
-        background: #636b6f;
-        padding: 5px 10px;
-        border-radius: 5px;
-        border: 2px solid #636b6f;
+      &:hover {
         transition: .3s;
+        z-index: 99;
+        background: #f8f8f8;
 
-        &:hover {
-          background: #cacaca;
+      }
+
+      /* Meta row of article, kind of footbar of every column with information */
+      .article__meta {
+        color: #636b6f;
+        @include flex-mix(row, space-between, initial);
+
+        &_info {
+          @include flex-mix(column, space-between, initial);
+          // width - we are leaving 10% for counters
+          width: 80%;
         }
 
-        a {
-          color: #fff;
+        &_counters {
+          background: rgba(255, 255, 255, 0.29);
+          width: fit-content;
+          height: min-content;
+          padding: 0 5px;
+          border-radius: 5px;
+
+          // Font awesome heart icon
+          &_heart {
+            margin-right: 5px;
+          }
+
+          // When user likes article, shows for him colored heart
+          &.article__hearted {
+            background: $heart-color;
+            color: #fff;
+          }
+        }
+
+        &_date {
+          font-style: italic;
+        }
+
+        &_buttons {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          display: none;
         }
       }
-    }
 
-    .article__body {
-      letter-spacing: .5px;
-      color: #5c5c5c;
+      .article__body {
+        letter-spacing: .5px;
+        color: #5c5c5c;
+      }
     }
   }
 }
 
+@include media-breakpoint-up(md) {
+
+  .article__content {
+    .article__meta {
+      &_info {
+        @include flex-mix(row, space-between, initial);
+      }
+
+      &_counters {
+        padding: 0 10px;
+      }
+    }
+  }
+
+}
+
+@include media-breakpoint-up(xl) {
+  .article__content {
+    .article__meta {
+      @include flex-mix(row, space-between, initial);
+
+      &_info {
+        @include flex-mix(row, space-between, center);
+
+      }
+
+      &_counters {
+
+      }
+    }
+  }
+}

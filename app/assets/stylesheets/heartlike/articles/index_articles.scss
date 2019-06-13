@@ -1,21 +1,27 @@
-
 /* ======= heartlike/articles/index ======== */
 /* Ul tag of articles list */
-.articles__index {
-  /* center list horizontally with 20% width margins on both sides */
-  width: 90%;
-  margin: 0 auto;
-  padding: 0;
-  /* remove dot from list style */
-  list-style-type: none;
 
-  @include flex-mix(row, space-between, center);
-  flex-wrap: wrap;
+@include media-breakpoint-up(xs) {
+  .articles__index {
+    /* center list horizontally with 20% width margins on both sides */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    /* remove dot from list style */
+    list-style-type: none;
+
+    @include flex-mix(row, space-between, center);
+    flex-wrap: wrap;
+
+  }
 
 }
 
 
-
-
+@include media-breakpoint-up(md) {
+  .articles__index {
+    width: 90%;
+  }
+}
 
 

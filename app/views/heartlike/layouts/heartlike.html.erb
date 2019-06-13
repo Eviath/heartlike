@@ -1,0 +1,10 @@
+<div class="heartlike__aside">
+  <%= render 'heartlike/layouts/aside' %>
+</div>
+<div class="heartlike__content" id="heartlike__content">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <h1 class="page__title" id="page__title"><%= yield :title %></h1>
+  <%= yield %>
+</div>
+<%= javascript_include_tag 'heartlike/application', 'data-turbolinks-track': 'reload' %>
