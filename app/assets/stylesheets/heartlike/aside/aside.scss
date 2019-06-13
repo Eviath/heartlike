@@ -15,6 +15,10 @@
       display: none;
     }
 
+    .aside__toggle {
+       color: $darker-white;
+    }
+
     &.toggled {
       width:100%;
       transition: .4s;

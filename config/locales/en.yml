@@ -7,7 +7,7 @@ en:
         yes: 'Yes'
         no: 'No'
       paragraph:
-        happy: 'Great news!'
+        happy: 'Great news! Glad you liked it!'
         sad: 'Oh, we are sorry! '
         question: 'Was the article helpful?'
     articles:

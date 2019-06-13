@@ -1,1 +1,1 @@
-<strong id="heart__count"><%=article.hearts.count %></strong>
+<span class="m-3 <%= guest_or_user_hearted?(article) ? 'hearted' : '' %>"><%= icon('fas', 'heart mr-2', class: "strong") %><%=article.hearts.count %></span>

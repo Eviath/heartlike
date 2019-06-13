@@ -1,8 +1,8 @@
 <div class="article__hearts">
+  <span id="heart__count">
+      <%= render partial: 'heartlike/hearts/partials/heart_count', locals: { article: @article } %>
+  </span>
   <%= render partial: 'heartlike/hearts/partials/heart_paragraph', locals: { article: @article } %>
-  <div class="article__hearts_inline">
-    <%= render partial: 'heartlike/hearts/partials/heart_button', locals: { article: @article } %>
-    <%= render partial: 'heartlike/hearts/partials/heart_count', locals: { article: @article } %>
-  </div>
+  <%= render partial: 'heartlike/hearts/partials/heart_button', locals: { article: @article } %>
 </div>
 

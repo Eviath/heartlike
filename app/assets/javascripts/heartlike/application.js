@@ -7,12 +7,12 @@
 if($('.article .article__meta_buttons').length) {
     $('.article').mousedown(function () {
         var x = document.getElementById(this.id);
-        $( '.article__meta_buttons', x ).fadeIn( "fast")
+        $( '.article__meta_buttons', x ).addClass( "active")
     });
 
     $('.article').mouseleave(function () {
         var x = document.getElementById(this.id);
-        $( '.article__meta_buttons', x ).fadeOut( "fast")
+        $( '.article__meta_buttons', x ).removeClass("active")
     });
 }
 

@@ -6,16 +6,12 @@
 
 .article__hearts {
   @include flex-mix(column, center, center);
-  // Hearts paragraph, question about article 'helpfulness'
-  &_paragraph {
-  }
-  // Heart button yes/no
-  &_button {
-    margin-right: 20px;
-  }
 
-  // Inline column, inside is heart_button and heart_count elements
-  &_inline {
-    @include flex-mix(row, initial, center)
+  // Hearts count
+  span {
+    // Hearted class is added to counter, if user liked the article, change color of it if user liked
+    &.hearted {
+      color: $heart-color;
+    }
   }
 }
