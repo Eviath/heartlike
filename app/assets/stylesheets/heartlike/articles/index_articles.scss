@@ -5,6 +5,7 @@
 
   // Buttons to change index of articles style, column/list
   .article__view_buttons {
+    display: none;
     a {
       color: $half-dark;
       padding: 0 10px;
@@ -39,3 +40,8 @@
 }
 
 
+@include media-breakpoint-up(lg) {
+  .article__view_buttons {
+    display: block;
+  }
+}
