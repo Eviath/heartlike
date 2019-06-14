@@ -29,5 +29,9 @@ module Heartlike
               end
       heart.destroy
     end
+    # Check if user hearted article
+    def hearted_by?(user)
+      self.hearts.pluck(:user_id).include?(user.id)
+    end
   end
 end

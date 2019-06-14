@@ -1,4 +1,4 @@
-<li class="article <%= column_size %> <%= custom_class %>" id="<%=article.id %>">
+<li class="article col-xl-<%= column_size %> <%= custom_class %>" id="<%=article.id %>">
   <div class="article__thumbnail">
     <%=image_tag main_app.url_for(article.thumbnail) if article.thumbnail.attached? %>
   </div>

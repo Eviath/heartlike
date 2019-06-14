@@ -1,6 +1,6 @@
-<%=link_to  controller: 'heartlike/articles', action: :index, column_size: '12', remote: true do %>
+<%=link_to articles_path(column_size: '12'), remote: true, title: 'List view' do %>
   <%=icon('fas', 'list', class: "strong #{get_column_size == '12' ? 'active' : ''}") %>
 <% end %>
-<%=link_to controller: 'heartlike/articles', action: :index, column_size: '6', remote: true do %>
+<%=link_to articles_path(column_size: '6'), remote: true, title: 'Columns view' do %>
   <%=icon('fas', 'columns', class: "strong #{get_column_size == '6' ? 'active' : ''}") %>
 <% end %>

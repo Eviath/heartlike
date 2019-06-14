@@ -1,5 +1,5 @@
 $('.articles__index').hide();
-$('.articles__index').html("<%= j render partial: 'heartlike/articles/partials/article', collection: @articles, locals: {custom_class: '', column_size: "col-xl-#{get_column_size}" } %>").fadeIn('slow');
+$('.articles__index').html("<%= j render partial: 'heartlike/articles/partials/article', collection: @articles, locals: {custom_class: '', column_size: "#{get_column_size}" } %>").fadeIn('slow');
 $('.article__view_buttons').html("<%= j render partial: 'heartlike/articles/partials/article_view_buttons' %>")
 
 <% if get_column_size == '6' %>

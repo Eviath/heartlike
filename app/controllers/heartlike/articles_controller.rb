@@ -6,7 +6,7 @@ module Heartlike
 
     # GET /articles
     def index
-      @articles = Article.with_attached_thumbnail.includes(:user).all.order(created_at: :DESC)
+      @articles = Article.with_attached_thumbnail.includes(:user, :hearts).all.order(created_at: :DESC)
       if params[:column_size]
         cookies.permanent[:column_size] = params[:column_size]
       end

@@ -10,7 +10,7 @@ module Heartlike
 
     # Check if user hearted article
     def hearted?(article)
-      self.hearts.find_by(article_id: article.id)
+      self.hearts.pluck(:article_id).include?(article.id)
     end
   end
 end
