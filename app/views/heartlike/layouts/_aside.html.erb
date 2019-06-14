@@ -21,13 +21,13 @@
         <% if user_signed_in? %>
           <i><%= current_user.email %></i>
         <% else %>
-          <i><%= link_to 'Log in', new_user_session_path %></i>
+          <i><%= link_to 'Log in', heartlike.new_user_session_path %></i>
         <% end %>
       </div>
 
       <div class="aside__footer_user--actions"></div>
       <% if user_signed_in? %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Log out', heartlike.destroy_user_session_path, method: :delete %>
       <% end %>
     </div>
   </div>

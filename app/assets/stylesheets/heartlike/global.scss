@@ -17,7 +17,6 @@ a {
 // Page content wrapper
 @include media-breakpoint-up(xs) {
   .heartlike__content {
-    margin-top: 50px;
     width: 90%;
     margin-left: 10%;
   }
