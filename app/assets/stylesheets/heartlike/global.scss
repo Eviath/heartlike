@@ -17,6 +17,7 @@ a {
 // Page content wrapper
 @include media-breakpoint-up(xs) {
   .heartlike__content {
+    position: relative;
     width: 90%;
     margin-left: 10%;
   }
@@ -58,7 +59,7 @@ a {
 @include media-breakpoint-up(md) {
   .heartlike__content {
     width: 80%;
-    margin-left: 20%;
+    margin-left: 18%;
   }
 }
 
@@ -66,15 +67,17 @@ a {
 .notice, .alert {
   position: absolute;
   font-style: italic;
-  right: 100px;
-  top: 50px;
-  background: $white-light;
-  color: $shadow;
-  padding: 25px;
+  left: 0;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  background: #f5f5f5;
+  color: #adadad;
+  padding: 10px;
   font-size: .8em;
   font-weight: 500;
   letter-spacing: .1em;
-  border: 1px solid $creamy;
+  border: 1px solid #efefef;
   border-radius: 1px;
 }
 
