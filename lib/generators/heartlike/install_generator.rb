@@ -12,7 +12,7 @@ module Devise
       desc "Creates a Heartlike initializer and copy locale files to your application."
 
       def copy_initializer
-        template "heartlikee.rb", "config/initializers/heartlike.rb"
+        template "heartlike.rb", "config/initializers/heartlike.rb"
       end
 
       def copy_locale

@@ -1,11 +1,12 @@
 <div class="aside__body">
   <div class="aside__toggleable">
+    <% if user_signed_in? %>
     <div class="aside__new-article">
       <%= link_to new_article_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'aside__new-article_button'} do  %>
         <%=icon('fas', 'plus', class: 'strong') %>
       <% end %>
     </div>
-
+    <% end %>
     <%= render partial: 'heartlike/partials/heartlike_brand' %>
 
     <ul class="aside__nav">
