@@ -16,6 +16,8 @@ en:
         sad: 'Oh, we are sorry! '
         question: 'Was the article helpful?'
     articles:
+      new:
+        title: 'New Article'
       index:
         title: 'Articles'
       article:

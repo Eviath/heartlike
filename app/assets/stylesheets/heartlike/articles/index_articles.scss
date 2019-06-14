@@ -2,6 +2,20 @@
 /* Ul tag of articles list */
 
 @include media-breakpoint-up(xs) {
+
+  // Buttons to change index of articles style, column/list
+  .article__view_buttons {
+    a {
+      color: $half-dark;
+      padding: 0 10px;
+
+      i.active {
+        color: $heart-color;
+      }
+    }
+    margin: 20px 0;
+  }
+
   .articles__index {
     /* center list horizontally with 20% width margins on both sides */
     width: 100%;

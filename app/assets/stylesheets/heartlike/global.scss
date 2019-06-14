@@ -1,6 +1,6 @@
 body {
   font-family: $heartlike-font;
-  background: $background-color;
+  background: $white;
 }
 
 /* unstyled Heartlike page links */
@@ -82,6 +82,7 @@ a {
 
 /* Title of pages */
 .page__title {
+  word-break: break-all;
   text-align: center;
   color: $dark;
   letter-spacing: 2px;

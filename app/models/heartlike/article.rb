@@ -3,7 +3,7 @@ module Heartlike
     # Associations
     belongs_to :user
     has_many :hearts
-
+    has_one_attached :thumbnail
     # Validations
     validates :title, presence: true, length: { minimum: 3 }
     validates :body, presence: true, length: { minimum: 3 }

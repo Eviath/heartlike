@@ -1,4 +1,7 @@
-<li class="article col-xl-6" id="<%=article.id %>">
+<li class="article <%= column_size %> <%= custom_class %>" id="<%=article.id %>">
+  <div class="article__thumbnail">
+    <%=image_tag main_app.url_for(article.thumbnail) if article.thumbnail.attached? %>
+  </div>
   <div class="article__content">
     <div class="article__meta">
       <div class="article__meta_info">
@@ -14,7 +17,7 @@
       </div>
     </div>
     <h2 class="article__title"><%=link_to article.title, article %></h2>
-    <p class="article__body"><%= truncate(article.body, length: 150) %></p>
+    <p class="article__body"><%= truncate(article.body, length: 350) %></p>
     <% if user_signed_in? %>
     <div class="article__meta_buttons">
       <strong class="article__meta_button article__meta_button--show heartlike__button"><%= link_to t('heartlike.articles.article.buttons.show'), article %></strong>

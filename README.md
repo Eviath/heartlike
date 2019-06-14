@@ -10,6 +10,11 @@ Heartlike RoR Blog Engine.
   - JQuery
 
 
+## Prerequisites
+
+ Heartlike depends on Active Storage. You have to install it and configure to suite your needs.
+ 
+
 ## Layout
 Engine is using your application stylesheets and layout file by default, to include heartlike stylesheet and layout, require it in your assetpipeline like this:
 

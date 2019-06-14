@@ -6,7 +6,14 @@ module Heartlike
 
     # GET /articles
     def index
-      @articles = Article.includes(:user).all.order(created_at: :DESC)
+      @articles = Article.with_attached_thumbnail.includes(:user).all.order(created_at: :DESC)
+      if params[:column_size]
+        cookies.permanent[:column_size] = params[:column_size]
+      end
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     # GET /articles/1
@@ -29,6 +36,7 @@ module Heartlike
     # POST /articles
     def create
       @article = Article.new(article_params)
+      @article.user = current_user
       if @article.save
         respond_to do |format|
           format.html do
@@ -65,7 +73,7 @@ module Heartlike
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:title, :body, :user_id)
+      params.require(:article).permit(:title, :body, :thumbnail)
     end
   end
 end

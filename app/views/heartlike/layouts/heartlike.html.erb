@@ -10,7 +10,9 @@
   <p class="alert"><%= alert %></p>
   <% end %>
   <div id="heartlike__body">
-    <h1 class="page__title" id="page__title"><%= yield :title %></h1>
+    <div class="col-md-6 mx-auto">
+      <h1 class="page__title" id="page__title"><%= yield :title %></h1>
+    </div>
     <%= yield %>
   </div>
 </div>
