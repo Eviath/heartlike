@@ -15,6 +15,10 @@
         <strong>Published at:</strong>
         <i><%= l(@article.created_at, format: :long) %></i>
       </p>
+      <p>
+        <strong>Category:</strong>
+        <i><%=link_to @article.category.title, @article.category %></i>
+      </p>
     </div>
     <%= render_hearts(@article)%>
   </div>

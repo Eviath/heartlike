@@ -2,7 +2,8 @@ module Heartlike
   class Article < ApplicationRecord
     # Associations
     belongs_to :user
-    has_many :hearts
+    has_many :hearts, dependent: :destroy
+    belongs_to :category
     has_one_attached :thumbnail
     # Validations
     validates :title, presence: true, length: { minimum: 3 }
