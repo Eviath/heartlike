@@ -1,0 +1,38 @@
+.dashboard_row {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.dashboard_nav {
+  width: 20%;
+  padding: 40px;
+  &_content {
+    background: $background-color;
+    padding: 20px;
+
+    &_title {
+      text-transform: uppercase;
+      font-size: .8em;
+      color: $darker-white;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      a {
+        color: $half-dark;
+        font-size: .9em;
+      }
+      padding: 5px;
+      margin: 5px 0;
+    }
+  }
+}
+
+.dashboard_content {
+  width: 80%;
+}

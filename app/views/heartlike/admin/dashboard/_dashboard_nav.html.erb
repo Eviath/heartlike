@@ -1,0 +1,8 @@
+<div class="dashboard_nav_content">
+  <h1 class="dashboard_nav_content_title"> Hartlike Resources </h1>
+  <ul>
+    <% heartlike_resources.each do |resource| %>
+      <li><%=link_to resource, admin_resources_path(resource: resource), class:'dashboard_nav_link' %></li>
+    <% end %>
+  </ul>
+</div>

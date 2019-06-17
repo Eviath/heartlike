@@ -1,0 +1,12 @@
+<table class="table table-responsive table-hover">
+  <thead>
+  <tr>
+    <% @resources.first.attributes.each do |key, _| %>
+      <th scope="col"><%= key %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render partial: 'heartlike/admin/resources/resource', collection: @resources %>
+  </tbody>
+</table>

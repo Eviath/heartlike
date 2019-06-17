@@ -6,7 +6,7 @@
     <%= render partial: 'heartlike/articles/partials/article_view_buttons' %>
     </div>
     <ul class="articles__index">
-      <%= render partial: 'heartlike/articles/partials/article', collection: @articles, locals: {custom_class: '', column_size: "#{get_column_size || '12'}"} %>
+      <%= render partial: 'heartlike/articles/article', collection: @articles, locals: {custom_class: '', column_size: "#{get_column_size || '12'}"} %>
     </ul>
   </div>
 </div>

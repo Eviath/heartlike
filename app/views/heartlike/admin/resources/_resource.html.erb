@@ -1,0 +1,7 @@
+<tr>
+  <th><%= link_to resource.attributes.first[1], admin_resource_path(resource.attributes.first[1], resource: resource.class.name) %></th>
+  <% resource.attributes.except('id').each do |_, value| %>
+    <td><%= value.to_s %></td>
+  <% end %>
+</tr>
+
