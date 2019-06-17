@@ -29,7 +29,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'devise'
   spec.add_dependency 'bootstrap', '~> 4.3.1'
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency 'factory_bot_rails'
   spec.add_development_dependency "better_errors"
+  spec.add_development_dependency "faker"
   spec.add_development_dependency "binding_of_caller"
   spec.add_dependency 'font-awesome-sass', '5.8.1'
   spec.add_dependency 'activestorage'

@@ -73,7 +73,7 @@ module Heartlike
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:title, :body, :thumbnail)
+      params.require(:article).permit(:title, :body, :thumbnail, :category_id)
     end
   end
 end

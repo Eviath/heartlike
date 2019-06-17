@@ -4,9 +4,11 @@ module Heartlike
   RSpec.describe ArticlesController, type: :controller do
     routes { Heartlike::Engine.routes }
 
+
+
     describe 'GET index' do
       it 'assigns @articles' do
-        article = Article.first
+        article = create(:article)
         get :index
         expect(assigns(:articles)).to eq([article])
       end
@@ -19,7 +21,7 @@ module Heartlike
 
     describe 'GET show' do
       it 'renders article show action' do
-        article = Article.first
+        article = FactoryBot.create(:article)
         get :show, params: { id: article.id }
         expect(response).to render_template('show')
       end
@@ -27,13 +29,19 @@ module Heartlike
 
     describe 'post CREATE' do
       context 'with good params' do
+        before(:each) do
+          sign_in create(:user)
+          @user = subject.current_user
+          @category = create(:category)
+        end
+
         it 'creates article' do
-          expect { post :create, params: { article: { title: "New article", body: 'Article', user_id: User.first.id } } }.to change { Article.all.count }.by(1)
+          expect { post :create, params: { article: { title: 'New article', body: 'new article desc', user_id: @user.id, category_id: @category.id } } }.to change { Article.all.count }.by(1)
           expect(Article.last.title).to eq('New article')
         end
 
         it 'redirects to article' do
-          post :create, params: { article: { title: "New article", body: 'Article', user_id: User.first.id } }
+          post :create, params: { article: { title: 'New article', body: 'new article desc', user_id: @user.id, category_id: @category.id } }
           expect(response).to redirect_to(article_path(Article.last))
         end
       end

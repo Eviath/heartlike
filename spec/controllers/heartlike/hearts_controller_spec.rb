@@ -5,7 +5,7 @@ module Heartlike
     routes { Heartlike::Engine.routes }
 
     before(:each) do
-      @article = Article.first
+      @article = create(:article)
     end
 
     describe 'heart' do
