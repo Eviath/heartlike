@@ -1,5 +1,11 @@
 <div class="dashboard_nav_content">
-  <h1 class="dashboard_nav_content_title"> Hartlike Resources </h1>
+  <div class="dashboard_brand mt-2 mb-4">
+    <%= render 'heartlike/partials/heartlike_brand' %>
+  </div>
+  <ul>
+  <li><%=link_to 'Dashboard', admin_path, class:'dashboard_nav_link' %></li>
+  </ul>
+  <h1 class="dashboard_nav_content_title mt-3"> Hartlike Resources </h1>
   <ul>
     <% heartlike_resources.each do |resource| %>
       <li><%=link_to resource, admin_resources_path(resource: resource), class:'dashboard_nav_link' %></li>

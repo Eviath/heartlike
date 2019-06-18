@@ -3,5 +3,6 @@
   <% resource.attributes.except('id').each do |_, value| %>
     <td><%= value.to_s %></td>
   <% end %>
+  <th><%=link_to 'edit', edit_admin_resource_path(resource, resource: resource.class.name) %></th>
 </tr>
 

@@ -16,6 +16,12 @@ module Heartlike
         @resource = resource.find(object)
 
       end
+
+      def edit
+        resource = params[:resource].classify.constantize
+        object = params[:id]
+        @resource = resource.find(object)
+      end
     end
   end
 end

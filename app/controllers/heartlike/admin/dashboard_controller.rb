@@ -6,8 +6,14 @@ module Heartlike
       layout 'heartlike/layouts/dashboard'
 
       def index
-        Rails.application.eager_load!
-        @models = ApplicationRecord.descendants
+        resources = []
+        ActiveRecord::Base.connection.tables.each do |t|
+          if t.start_with?('heartlike')
+            resources <<  t.split('_').last.camelize
+          end
+        end
+
+        @resources = resources
       end
 
     end
