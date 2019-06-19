@@ -4,6 +4,10 @@ require 'active_support/dependencies'
 require 'orm_adapter'
 require 'securerandom'
 
+# Heartlike admin
+require 'heartlike/admin/resource'
+require 'heartlike/admin/dashboard'
+
 module Heartlike
   # Your code goes here...
   #

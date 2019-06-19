@@ -1,7 +1,6 @@
 <div class="heartlike__form">
   <%= form_for(resource) do |form| %>
 
-
     <% form_resource(resource).each do  |column, type| %>
       <%= form_attributes(form, type, column) %>
     <% end %>

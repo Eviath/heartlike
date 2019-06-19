@@ -5,15 +5,10 @@ module Heartlike
     class DashboardController < ApplicationController
       layout 'heartlike/layouts/dashboard'
 
-      def index
-        resources = []
-        ActiveRecord::Base.connection.tables.each do |t|
-          if t.start_with?('heartlike')
-            resources <<  t.split('_').last.camelize
-          end
-        end
+      include Heartlike::Admin
 
-        @resources = resources
+      def index
+        @resources = Heartlike::Admin::Dashboard.resources
       end
 
     end
