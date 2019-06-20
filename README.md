@@ -1,5 +1,8 @@
+## DO NOT USE IN PRODUCTION! WORK IN PROGRESS
+
 # Heartlike
 Heartlike RoR Blog Engine.
+
 
 ### Heartlike can be so awesome thanks to these things.
   - Ruby on Rails
@@ -29,8 +32,26 @@ in layouts/application body
     <%= include_heartlike_template %>
  
 ## Usage
-How to use my plugin.
 
+You can override/add resources by editing this file:
+    
+    app/heartlike/admin/resources.rb
+    
+    
+You can define resources and fields to show on dashboard pages like this:
+```ruby
+    module Heartlike
+      module Admin
+        class Resource
+          MODEL_ATTRIBUTES = {
+              heartlike_articles: %w(title id body created_at updated_at),
+              # Your custom models, (all are created with heartlike namespace)
+              heartlike_[your model name]: %w(table fields)
+          }
+        end
+      end
+    end
+```
 ## Installation
 Add this line to your application's Gemfile:
 

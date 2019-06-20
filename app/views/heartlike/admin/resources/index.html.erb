@@ -1,10 +1,11 @@
-<%= link_to "New #{@resources.first.class}", new_admin_resource_path(resource: @resources.first.class) %>
+<%= link_to "New #{@resource.resource_name}", new_admin_resource_path(resource: @resource.resource) %>
+
 
 
 <table class="table table-responsive table-hover">
   <thead>
   <tr>
-    <% @resources.first.attributes.each do |key, _| %>
+    <% @resources.first.resource_attributes.each do |key, _| %>
       <th scope="col"><%= key %></th>
     <% end %>
   </tr>

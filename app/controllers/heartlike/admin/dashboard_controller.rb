@@ -5,10 +5,8 @@ module Heartlike
     class DashboardController < ApplicationController
       layout 'heartlike/layouts/dashboard'
 
-      include Heartlike::Admin
-
       def index
-        @resources = Heartlike::Admin::Dashboard.resources
+        @resources = Dashboard.resources
       end
 
     end

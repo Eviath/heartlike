@@ -12,7 +12,6 @@ module Heartlike
         resources
       end
 
-
     end
   end
 end

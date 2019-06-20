@@ -10,6 +10,7 @@ module Heartlike
     validates :body, presence: true, length: { minimum: 3 }
     validates :user, presence: true
 
+
     # Article methods
     # Show article title in url
     def to_param

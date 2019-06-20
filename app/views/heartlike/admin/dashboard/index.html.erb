@@ -5,7 +5,7 @@
     <div class="row">
       <% @resources.each do |r| %>
         <div class="col-md-4">
-          <%= link_to admin_resources_path(resource: r) do %>
+          <%= link_to admin_resources_path(resource: r.resource) do %>
           <div class="dashboard__info_column">
             <strong>
               <p class="dashboard__info_column-title"><%= r.resource_name %></p>

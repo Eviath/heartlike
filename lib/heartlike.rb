@@ -5,8 +5,10 @@ require 'orm_adapter'
 require 'securerandom'
 
 # Heartlike admin
+require 'heartlike/admin/resources/resources'
 require 'heartlike/admin/resource'
 require 'heartlike/admin/dashboard'
+require 'heartlike/admin/collection'
 
 module Heartlike
   # Your code goes here...

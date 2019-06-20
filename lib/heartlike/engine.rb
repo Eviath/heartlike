@@ -11,6 +11,12 @@ module Heartlike
       g.factory_bot dir: 'spec/factories'
     end
 
+    config.to_prepare do
+      Dir.glob(Rails.root + "app/heartlike/admin/resources.rb").each do |c|
+        require_dependency(c)
+      end
+    end
+
     initializer "heartlike.factories", after: "factory_bot.set_factory_paths" do
       FactoryBot.definition_file_paths << File.expand_path('../../../spec/factories', __FILE__) if defined?(FactoryBot)
     end

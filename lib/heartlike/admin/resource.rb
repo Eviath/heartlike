@@ -1,12 +1,26 @@
 module Heartlike
   module Admin
     class Resource
-      def initialize(model)
-        @resource = model
+      include Heartlike::Admin::Resources
+
+      def initialize(resource, object = nil)
+        @resource = resource
+        @object = object
+        @attributes = {}
+        @options = MODEL_ATTRIBUTES[:"#{@resource}"]
+
+        if !@options.nil? && !@object.nil?
+          @options.each { |option| @object.attributes.each { |key, value| @attributes[key] = value if key.in?([option, 'id']) } } if @object.respond_to?(:attributes)
+        end
       end
+
 
       def resource
         @resource
+      end
+
+      def resource_attributes
+        @attributes
       end
 
       def resource_name
