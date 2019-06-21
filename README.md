@@ -1,4 +1,7 @@
 ## DO NOT USE IN PRODUCTION! WORK IN PROGRESS
+Im in early learning process of building engines with RoR, there is a good amount of possibility that this code is not written in the best way possible. Code is not fully tested nor designed to work in production at that stage. 
+
+####I would be grateful for any constructive criticism and help.
 
 # Heartlike
 Heartlike RoR Blog Engine.
@@ -33,25 +36,36 @@ in layouts/application body
  
 ## Usage
 
-You can override/add resources by editing this file:
+You can override/add resources by editing this file in your application:
     
     app/heartlike/admin/resources.rb
     
     
-You can define resources and fields to show on dashboard pages like this:
+You can define resources and fields to show on dashboard pages, you can see how to do it in the file :
+        
+        lib/heartlike/admin/resources/resources.rb
+        
+   
 ```ruby
-    module Heartlike
-      module Admin
-        class Resource
-          MODEL_ATTRIBUTES = {
-              heartlike_articles: %w(title id body created_at updated_at),
-              # Your custom models, (all are created with heartlike namespace)
-              heartlike_[your model name]: %w(table fields)
-          }
-        end
-      end
-    end
+  ATTRIBUTE_TYPES = {
+      id: 'integer',
+      title: 'string',
+      body: 'text',
+      created_at: 'date',
+      updated_at: 'date',
+      category_id: 'select',
+      user_id: 'select',
+      article_id: 'select'
+  }
+
+  COLLECTION_ATTRIBUTES = %w[id name email title created_at user_id].freeze
+
+  SHOW_ATTRIBUTES = %w[id title body user_id category_id article_id].freeze
+
+  FORM_ATTRIBUTES = %w[body name email title created_at updated_at user_id category_id article_id heart_id].freeze
+
 ```
+
 ## Installation
 Add this line to your application's Gemfile:
 
