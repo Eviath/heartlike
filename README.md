@@ -1,10 +1,10 @@
 ## DO NOT USE IN PRODUCTION! WORK IN PROGRESS
 Im in early learning process of building engines with RoR, there is a good amount of possibility that this code is not written in the best way possible. Code is not fully tested nor designed to work in production at that stage. 
 
-####I would be grateful for any constructive criticism and help.
+#### I would be grateful for any constructive criticism and help.
 
 # Heartlike
-Heartlike RoR Blog Engine.
+Heartlike RoR Blog Engine with custom Admin panel.
 
 
 ### Heartlike can be so awesome thanks to these things.
@@ -36,6 +36,7 @@ in layouts/application body
  
 ## Usage
 
+#### Admin panel
 You can override/add resources by editing this file in your application:
     
     app/heartlike/admin/resources.rb
