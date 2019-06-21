@@ -5,11 +5,11 @@ module Heartlike
     end
 
 
-    def form_resource(resource)
-      things = {}
-      resource.class.attribute_names.each { |k| things["#{k}"] = resource.class.type_for_attribute(k).type }
-      things
-    end
+    # def form_resource(resource)
+    #   things = {}
+    #   resource.class.attribute_names.each { |k| things["#{k}"] = resource.class.type_for_attribute(k).type }
+    #   things
+    # end
 
     # def form_attributes(form, type, column)
     #   if type.to_s == 'integer' && column != 'id'

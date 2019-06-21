@@ -5,7 +5,7 @@
 <table class="table table-responsive table-hover">
   <thead>
   <tr>
-    <% @resources.first.resource_attributes.each do |key, _| %>
+    <% @resources.first.attributes.each do |key, _| %>
       <th scope="col"><%= key %></th>
     <% end %>
   </tr>

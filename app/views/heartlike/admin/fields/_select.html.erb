@@ -1,0 +1,8 @@
+<div class="field-unit__label">
+  <%= f.label :"#{attribute}" %>
+</div>
+<div class="field-unit__field">
+  <% attribute_class = "Heartlike::#{attribute.split('_').first.camelize}".constantize  %>
+  <%= f.select(:"#{attribute}", attribute_class.all.collect {|u| [u.inspect, u.id]}, :prompt => 'Select', class: 'form-control' ) %>
+</div>
+

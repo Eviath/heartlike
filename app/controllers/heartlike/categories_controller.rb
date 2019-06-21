@@ -10,11 +10,23 @@ module Heartlike
     def show
     end
 
+    def create
+      @category = Category.new(category_params)
+      if @category.save
+        redirect_to request.referrer
+      else
+        render :new
+      end
+    end
 
     protected
 
     def find_category
       @category = Category.find(params[:id])
+    end
+
+    def category_params
+      params.require(:category).permit(:title)
     end
   end
 end

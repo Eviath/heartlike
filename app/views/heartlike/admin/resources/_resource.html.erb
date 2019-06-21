@@ -1,8 +1,8 @@
 <tr>
-  <% resource.resource_attributes.each do |_, value| %>
+  <% resource.attributes.each do |_, value| %>
     <td><%= value.to_s %></td>
   <% end %>
-  <th><%=link_to 'show', admin_resource_path(resource.resource_attributes['id'], resource: resource.resource) %></th>
-  <th><%=link_to 'edit', edit_admin_resource_path(resource.resource_attributes['id'], resource: resource) %></th>
+  <th><%=link_to 'show', admin_resource_path(resource.attributes['id'], resource: resource.resource) %></th>
+  <th><%=link_to 'edit', edit_admin_resource_path(resource.attributes['id'], resource: resource.resource) %></th>
 </tr>
 

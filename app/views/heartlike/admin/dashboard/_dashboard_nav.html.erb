@@ -8,7 +8,7 @@
   <h1 class="dashboard_nav_content_title mt-3"> Hartlike Resources </h1>
   <ul>
     <% heartlike_resources.each do |resource| %>
-      <li><%=link_to resource.resource_name, admin_resources_path(resource: resource.resource), class:'dashboard_nav_link' %></li>
+      <li><%=link_to resource.resource_name.pluralize, admin_resources_path(resource: resource.resource), class:'dashboard_nav_link' %></li>
     <% end %>
   </ul>
 </div>

@@ -6,7 +6,7 @@ module Heartlike
         resources = []
         ActiveRecord::Base.connection.tables.map do |model|
           if model.start_with?('heartlike')
-            resources << Heartlike::Admin::Resource.new(model)
+            resources << Heartlike::Admin::Resource.new([model, nil])
           end
         end
         resources

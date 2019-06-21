@@ -8,7 +8,7 @@
           <%= link_to admin_resources_path(resource: r.resource) do %>
           <div class="dashboard__info_column">
             <strong>
-              <p class="dashboard__info_column-title"><%= r.resource_name %></p>
+              <p class="dashboard__info_column-title"><%= r.resource_name.pluralize %></p>
               <p class="text-center"><%= r.resource_class.all.size %></p>
             </strong>
           </div>

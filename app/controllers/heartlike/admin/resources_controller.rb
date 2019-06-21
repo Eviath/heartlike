@@ -4,16 +4,15 @@ module Heartlike
   module Admin
     class ResourcesController < ApplicationController
       layout 'heartlike/layouts/dashboard'
-      before_action :initialize_resource, only: [:index, :show, :edit, :new]
-      before_action :find_object, only: [:show, :edit]
+      before_action :initialize_resource, only: %i[index show edit new]
+      before_action :find_object, only: %i[show edit]
 
       def index
-        @resources = []
-        @resource.all_objects.each { |object| @resources << Resource.new(params[:resource], object) }
+        @resources = @resource.resource_collection
       end
 
       def show
-        @object = Resource.new(params[:resource], @object)
+        @object = Resource.new(resource_params, @object)
       end
 
       def edit
@@ -33,8 +32,12 @@ module Heartlike
 
       protected
 
+      def resource_params
+        [params[:resource], params[:action]]
+      end
+
       def initialize_resource
-        @resource = Resource.new(params[:resource])
+        @resource = Resource.new(resource_params)
       end
 
       def find_object
