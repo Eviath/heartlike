@@ -1,8 +1,18 @@
 <tr>
-  <% resource.attributes.each do |_, value| %>
-    <td><%= value.to_s %></td>
+
+
+  <% resource.attributes.each do |key, value| %>
+    <td><%= render_resource_attribute(key, value) %></td>
   <% end %>
-  <th><%=link_to 'show', admin_resource_path(resource.attributes['id'], resource: resource.resource) %></th>
-  <th><%=link_to 'edit', edit_admin_resource_path(resource.attributes['id'], resource: resource.resource) %></th>
+
+
+  <% resource.association_attributes.each do |key, value| %>
+    <td><%= render_resource_attribute(key, value) %></td>
+  <% end %>
+
+
+  <th><%= link_to t('heartlike.actions.show'), admin_resource_path(resource.attributes['id'], resource: resource.resource) %>
+    - <%= link_to t('heartlike.actions.edit'), edit_admin_resource_path(resource.attributes['id'], resource: resource.resource) %>
+    - <%= link_to t('heartlike.actions.destroy'), admin_resource_path(resource.attributes['id'], resource: resource.resource), method: :delete %> </th>
 </tr>
 

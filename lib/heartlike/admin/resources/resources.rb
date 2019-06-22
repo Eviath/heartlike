@@ -13,7 +13,7 @@ module Heartlike
           article_id: 'select'
       }
 
-      COLLECTION_ATTRIBUTES = %w[id name email title created_at user_id].freeze
+      COLLECTION_ATTRIBUTES = %w[id name email title created_at user_id category_id].freeze
 
       SHOW_ATTRIBUTES = %w[id title body user_id category_id article_id].freeze
 

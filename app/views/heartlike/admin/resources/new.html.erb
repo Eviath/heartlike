@@ -1,2 +1,2 @@
-New <%= @resource.class %>
-<%= render partial: 'form', locals: {resource: @object} %>
+New <%= @resource.resource_class %>
+<%= render partial: 'form', locals: {resource: @object, parent: @resource.resource} %>

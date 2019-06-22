@@ -23,6 +23,14 @@ module Heartlike
         end
       end
 
+      def attributes
+        @attributes.select {|k, _| k.exclude?('_id')}
+      end
+
+      def association_attributes
+        @attributes.select {|k, _| k.include?('_id')}
+      end
+
       def resource_collection
         resources = []
         all_objects.each { |object| resources << Resource.new([@resource, @action], object) }
@@ -49,7 +57,7 @@ module Heartlike
         resource_class.find_by(options)
       end
 
-      attr_reader :resource, :options, :action, :attributes, :attribute_types
+      attr_reader :resource, :options, :action, :attribute_types
 
     end
   end

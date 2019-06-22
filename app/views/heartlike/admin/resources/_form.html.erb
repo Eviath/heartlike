@@ -1,6 +1,5 @@
 <div class="heartlike__form">
-  <%= form_for(resource) do |form| %>
-
+  <%= form_for(resource, url: {controller: 'heartlike/admin/resources', parent: parent}) do |form| %>
     <% resource.attributes.each do |key, value| %>
       <%= render partial: "heartlike/admin/fields/#{@resource.attribute_types[:"#{key}"] || 'string'}", locals: {f: form, attribute: key, value: value} if key.in?(@resource.options) %>
     <% end %>

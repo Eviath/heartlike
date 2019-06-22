@@ -1,6 +1,7 @@
 Heartlike::Engine.routes.draw do
   devise_for :users, class_name: "Heartlike::User", module: :devise
 
+
   namespace :admin do
     resources :resources
     get '', to: 'dashboard#index', as: '/'

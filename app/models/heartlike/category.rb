@@ -1,5 +1,5 @@
 module Heartlike
   class Category < ApplicationRecord
-    has_many :articles, dependent: :destroy
+    has_many :articles
   end
 end

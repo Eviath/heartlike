@@ -1,5 +1,11 @@
 en:
   heartlike:
+    admin:
+      resources:
+        index:
+          actions:
+            actions: 'Actions'
+            new: 'New'
     devise:
       sessions:
         login: 'Log in'
@@ -7,6 +13,9 @@ en:
           login: 'Log in'
     actions:
       confirm: 'Are you sure?'
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Destroy'
     hearts:
       button:
         yes: 'Yes'

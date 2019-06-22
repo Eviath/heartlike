@@ -1,16 +1,29 @@
-<%= link_to "New #{@resource.resource_name}", new_admin_resource_path(resource: @resource.resource) %>
+<div class="col-md-12">
+  <div class="heartlike__buttons text-left">
+    <%= link_to "#{t('.actions.new')} #{@resource.resource_name}", new_admin_resource_path(resource: @resource.resource), class: 'heartlike__button' %>
+  </div>
+
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <% @resources.first.attributes.each do |key, _| %>
+        <th scope="col"><%= key.split('_').first.camelize %></th>
+      <% end %>
+
+      <% @resources.first.association_attributes.each do |key, _| %>
+        <th scope="col"><%= key.split('_').first.camelize %></th>
+      <% end %>
+
+      <th scope="col"><%= t('.actions.actions') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render partial: 'heartlike/admin/resources/resource', collection: @resources %>
+    </tbody>
+  </table>
+</div>
 
 
 
-<table class="table table-responsive table-hover">
-  <thead>
-  <tr>
-    <% @resources.first.attributes.each do |key, _| %>
-      <th scope="col"><%= key %></th>
-    <% end %>
-  </tr>
-  </thead>
-  <tbody>
-  <%= render partial: 'heartlike/admin/resources/resource', collection: @resources %>
-  </tbody>
-</table>
+
